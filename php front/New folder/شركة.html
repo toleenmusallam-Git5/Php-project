@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>شركة الرفاه للنقل</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      direction: rtl;
+      background-color: #f5f5f5;
+    }
+
+    .hero-image {
+	
+     width: 100%;
+  height:500px;
+  background-image: url('resize.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+    }
+
+    .nav-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      width: 90%;
+      max-width: 1000px;
+      margin: -80px auto 20px;
+      border-radius: 16px;
+      border: 2px solid #4CAF50;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      width: 150px;
+      display: block;
+      float: left;
+      margin-bottom: 10px;
+      margin-top: -10px;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-link .label {
+      color: #333;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover .label,
+    .nav-link.active .label {
+      color: #FFD700;
+    }
+
+    .section {
+      display: none;
+      max-width: 1000px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border-top: 2px solid #ccc;
+    }
+
+    .section.active {
+      display: block;
+    }
+	
+	.top-bar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #4CAF50;
+  padding: 10px 20px;
+  border-radius: 12px;
+  z-index: 5;
+  display: flex;
+  gap: 15px;
+}
+
+.top-bar button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s;
+}
+
+.top-bar button:hover {
+  color: #FFD700;
+}
+.intro-section {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .intro-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .intro-section img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+
+    .main-sections {
+     display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 30px auto;
+  flex-wrap: wrap;;
+    }
+
+    .section-box {
+        flex: 1;
+  min-width: 280px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .section-box h3 {
+      text-align: center;
+      color: #444;
+    }
+
+ .offer-item {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 20px;
+  direction: rtl;
+}
+
+.offer-item img {
+  width: 300px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.offer-text {
+  flex: 1;
+  text-align: right;
+}
+
+
+
+    .popular-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+
+  padding: 10px;
+  border-radius: 10px;
+  direction: rtl; 
+}
+
+.popular-item img {
+  width: 100px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.popular-text {
+  flex: 1;
+  text-align: right; /* تأكيد محاذاة النص يمين */
+}
+
+.popular-text h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.popular-text p {
+  margin: 5px 0 0;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+    .service-section h4 {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .service-section p {
+      font-size: 14px;
+      color: #555;
+    }
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.service-icon {
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+}
+
+.service-text h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #040321;
+}
+
+.service-text p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #444;
+}
+.section-box.offers {
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  max-width: 100%;
+  overflow: hidden; 
+  box-sizing: border-box;
+}
+
+.hero-overlay-text {
+  position: absolute;
+  top: 30%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 3;
+ 
+  padding: 20px 30px;
+  border-radius: 12px;
+}
+
+.hero-overlay-text h2 {
+  margin: 0;
+  font-size: 110px;
+}
+
+.trips-content {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.trips-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.bus-icon {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.trip-choice {
+  font-size: 30px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.trip-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.trip-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.trip-buttons button:hover,
+.trip-buttons .active {
+  background-color: #388E3C;
+}
+
+.trip-box {
+  background-color: white;
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: right;
+}
+
+
+.medical-boxes {
+   display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+}
+
+.medical-box {
+   background-color: white;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 15px;
+  
+ 
+ 
+
+}
+
+.medical-box:hover {
+  transform: translateY(-5px);
+}
+
+.medical-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.medical-box h3 {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+.medical-box p {
+  margin-top: 10px;
+  color: #666;
+  font-size: 15px;
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="top-bar">
+  <button onclick="alert('تسجيل الدخول')">
+    <span>تسجيل الدخول</span> <span>▼</span>
+  </button>
+  <button onclick="alert('حجوزاتي')">
+    <span>حجوزاتي</span> <span>▼</span>
+  </button>
+</div>
+  <div class="hero-image"></div>
+<div class="hero-overlay-text" id="heroText" style="display: none;">
+  <h1>استمتع بأفضل الرحلات</h1>
+</div>
+  <div class="nav-box">
+    <img src="123.png" alt="شعار الرفاه" class="logo"> 
+    <div class="navbar">
+      <div class="nav-link active" onclick="showSection('home', this)">
+        <img src="بيت اصفر.jpg" width="70" alt="بيت" class="icon" data-hover="بيت اصفر.jpg" data-default="4.png">
+        <span class="label">الرئيسية</span>
+      </div>
+
+      <div class="nav-link" onclick="showSection('trips', this)">
+        <img src="ق.png" width="35" alt="باص" class="icon" data-hover="باص اصفر.jpg" data-default="ق.png">
+        <span class="label">الرحلات</span>
+      </div>
+
+      <div class="nav-link" onclick="showSection('hotels', this)">
+        <img src="تخت.png" width="25" alt="فندق" class="icon" data-hover="تخت اصفر.jpg" data-default="تخت.png">
+        <span class="label">الفنادق</span>
+      </div>
+
+      <div class="nav-link" onclick="showSection('combo', this)">
+        <img src="6.png" width="40" alt="مجمع" class="icon" data-hover="عمارة صفراء.jpg" data-default="6.png">
+        <span class="label">رحلات + فنادق</span>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <p>استمتع بتجربة سياحية لا تُنسى مع شركة الرفاه للنقل</p>
+      <h3>شريكك الموثوق في عالم النقل السياحي.</h3>
+    </div>
+  </div>
+
+ 
+  <div id="trips" class="section">
+   <div class="trips-content">
+  <h2 class="trips-title">حافلات مريحة ومميزة أحدث أنواع الخدمات</h2>
+  <img src="اسود.png" alt="أيقونة باص" class="bus-icon">
+  <p class="trip-choice">اختر نوع رحلتك</p>
+
+  <div class="trip-buttons">
+    <button onclick="showTripContent('religious', this)">دينية</button>
+    <button onclick="showTripContent('historical', this)">أثرية</button>
+    <button onclick="showTripContent('entertainment', this)">ترفيهية</button>
+    <button  id="medicalBtn" class="active" onclick="showTripContent('medical', this)">علاجية</button>
+  </div>
+
+ <div class="content-section" id="medicalContent" style="display: none;">
+  <div class="medical-boxes">
+    <div class="medical-box">
+      <img src="41.jpg" alt="العلاج الطبيعي">
+      <h3>وادي رم</h3>
+      <p>يُعد وادي رم ملاذًا مثاليًا لمحبي الطبيعة والمغامرة، بتضاريسه الخلابة وكثبانه الرملية الحمراء التي تأسر الأنظار.
+	مع سحر الصحراء تحت سماء صافية مرصعة بالنجوم</p>
+    </div>
+    <div class="medical-box">
+      <img src="43.jpg" alt="الاستشفاء الصحي">
+      <h3>محمية ضانا</h3>
+      <p>اكتشف أقدم وأكبر محمية طبيعية في الأردن، حيث يلتقي الجمال البيئي بالتنوع الحيوي الفريد.</p>
+    </div>
+  </div>
+  <div class="medical-box">
+    <img src="45.jpg" alt="العلاج الطبيعي">
+    <h3>البحر الميت</h3>
+    <p>يُعد البحر الميت وجهة علاجية وسياحية فريدة، يتميز بتركيبة غنية بالأملاح والمعادن، وطين مفيد للبشرة والمفاصل، مع هواء نقي وأعلى نسبة أوكسجين تساعد على الاسترخاء في أخفض نقطة على سطح الأرض.</p>
+  </div>
+  <div class="medical-box">
+    <img src="43.jpg" alt="الاستشفاء الصحي">
+    <h3>محمية ضانا</h3>
+    <p>هواء نقي وطبيعة خلابة، مناسب للاسترخاء والتعافي النفسي.
+    تحتوي على أنواع نادرة من النباتات الطبية.</p>
+  </div>
+</div>
+</div>
+
+</div>
+
+  </div>
+  <div id="hotels" class="section">
+    <p>هنا معلومات عن الفنادق.</p>
+  </div>
+  <div id="combo" class="section">
+    <p>هنا باقات الرحلات والفنادق معًا.</p>
+  </div>
+  </div>
+  <script>
+    const links = document.querySelectorAll('.nav-link');
+
+    links.forEach(link => {
+      const img = link.querySelector('img');
+      const def = img.dataset.default;
+      const hover = img.dataset.hover;
+
+      // hover
+      link.addEventListener('mouseenter', () => {
+        img.src = hover;
+      });
+
+      // leave
+      link.addEventListener('mouseleave', () => {
+        if (!link.classList.contains('active')) {
+          img.src = def;
+        }
+      });
+    });
+
+  function showSection(id, element) {
+  // عرض القسم المطلوب
+  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+
+  // تفعيل الرابط وإرجاع كل الأيقونات للوضع الافتراضي
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+    const img = link.querySelector('img');
+    img.src = img.dataset.default; // ترجع للصورة السوداء
+  });
+
+  // اضف active للرابط المضغوط وغيّر صورته إلى اللون الأصفر
+  element.classList.add('active');
+  const activeImg = element.querySelector('img');
+  activeImg.src = activeImg.dataset.hover;
+
+  // تغيير الخلفية والنص حسب القسم
+  const heroImage = document.querySelector('.hero-image');
+  const heroText = document.getElementById('heroText');
+
+  if (id === 'trips') {
+    heroImage.style.backgroundImage = "url('ررحلة.png')";
+    heroText.style.display = 'block';
+  } else {
+    heroImage.style.backgroundImage = "url('resize.jpg')";
+    heroText.style.display = 'none';
+  }
+}
+
+
+  </script>
+
+<div id="home" class="section active">
+
+ <div class="intro-section">
+    <p>
+      في شركة الرفاه للنقل، نوفّر لك تجربة نقل سياحي متكاملة داخل أجمل وجهات الأردن، تجمع بين الراحة، الأمان، والاحترافية.
+سواء كنت ترغب في استكشاف المدن التاريخية مثل البترا وجرش، أو الاستمتاع بجمال الطبيعة في وادي رم والبحر الميت، أو الانغماس في ثقافات المناطق المحلية،
+نحن هنا لنكون رفيقك الموثوق في كل رحلة، ونضمن لك تجربة سفر مميزة لا تُنسى.
+      <br>
+      تضمن لك مركباتنا الحديثة وفريقنا المدرب، رحلة مريحة وممتعة. ونقدم لك تجربة سفر استثنائية
+      تجعل كل لحظة من رحلتك ذكرى لا تُنسى. استكشف وجهات رائعة معنا، واستمتع بأعلى مستويات الراحة والرفاهية.
+    </p>
+    <img id="slider-image" src="صورة11.jpg" alt="صورة" style="width: 900px;">
+  </div>
+
+  <!-- الأقسام الثلاثة -->
+  <div class="main-sections">
+
+  <!-- قسم خدمة العملاء -->
+    <div class="section-box service-section">
+      <h3>خدمة العملاء</h3>
+
+  <div class="service-item">
+    <img src="11.jpg" alt="أيقونة" class="service-icon">
+    <div class="service-text">
+      <h4>الراحة والرفاه</h4>
+      <p>بيئة حديثة ومميزة مزودة بأحدث التقنيات ووسائل الراحة</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <img src="12.jpg" alt="أيقونة" class="service-icon">
+    <div class="service-text">
+      <h4>معك في كامل رحلتك</h4>
+      <p>نقدّم سائقين خاصين لك، يتحدثون عدة لغات، ويضمنون العودة الآمنة</p>
+    </div>
+  </div>
+
+  <div class="service-item">
+    <img src="13.jpg" alt="أيقونة" class="service-icon">
+    <div class="service-text">
+      <h4>دعم فوري</h4>
+      <p>تقديم الدعم والخدمات الإلكترونية المميزة على مدار الساعة</p>
+    </div>
+  </div>
+    </div>  
+   
+
+    <!-- قسم الأكثر شهرة -->
+   <div class="section-box popular">
+  <h3>الأكثر شهرة</h3>
+
+  <div class="popular-item">
+   
+    <div class="popular-text">
+      <h4>البتراء</h4>
+        <p>5★ <h5>مناطق الحفاظ على الطبيعة</h5></p>
+    </div>
+	<img src="بتراء.jpg" alt="البتراء">
+  </div>
+
+  <div class="popular-item">
+ 
+    <div class="popular-text">
+      <h4>المدرج الروماني</h4>
+      <p>4.5★ <h5>مناطق الحفاظ على الطبيعة</h5></p>
+    </div>
+    <img src="مدرج.jpg" alt="المدرج الروماني">
+  </div>
+
+  <div class="popular-item">
+  
+    <div class="popular-text">
+      <h4>وادي رم</h4>
+      <p>4.7★ <h5>مناطق الحفاظ على الطبيعة</h5></p>
+    </div>  
+	<img src="وادي.jpg" alt="وادي رم">
+  </div>
+</div>
+
+
+   
+	<!-- قسم أحدث العروض -->
+ <div class="section-box offers">
+      <h3>أحدث العروض</h3>
+      <p>بمناسبة يوم الجمعة الفضيل خصم 50% لزيارة موقع أصحاب الكهف</p>
+     	<img  src="كهف.jpg" alt="الكهف" width= 250px
+  height= 400px>
+    </div> 
+
+  </div>
+
+
+</div>
+<script>
+  const images = ["صورة11.jpg", "صورة12.jpg", "صورة13.jpg"]; 
+  let index = 0;
+  const sliderImage = document.getElementById("slider-image");
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    sliderImage.src = images[index];
+  }, 3000); 
+</script>
+<script>
+function showTripContent(type, button) {
+  // أزل التفعيل من كل الأزرار
+  document.querySelectorAll('.trip-buttons button').forEach(btn => btn.classList.remove('active'));
+
+  // فعل الزر الحالي
+  button.classList.add('active');
+
+  // حدد المحتوى المناسب
+  let content = '';
+  if (type === 'religious') {
+    content = `<h3>الرحلات الدينية</h3><p>زيارات إلى المواقع المقدسة بكل راحة وأمان مع مرشدين مختصين.</p>`;
+  } else if (type === 'historical') {
+    content = `<h3>الرحلات الأثرية</h3><p>استكشاف مواقع تاريخية قديمة مثل البتراء والمدرج الروماني.</p>`;
+  } else if (type === 'entertainment') {
+    content = `<h3>الرحلات الترفيهية</h3><p>نزهات إلى أماكن مليئة بالمرح مثل المنتزهات والحدائق والمتاحف.</p>`;
+ } else if (type === 'medical') {
+  content = `
+    <h3>الرحلات العلاجية</h3>
+    <div class="popular-item">
+      <div class="popular-text">
+        <h4>حمامات ماعين</h4>
+        <p>ينابيع مياه معدنية ساخنة تساعد على الاسترخاء وتجديد النشاط.</p>
+      </div>
+      <img src="ماعين.jpg" alt="حمامات ماعين">
+    </div>
+
+    <div class="popular-item">
+      <div class="popular-text">
+        <h4>البحر الميت</h4>
+        <p>أدنى نقطة على سطح الأرض، معروف بفوائده العلاجية للبشرة والمفاصل.</p>
+      </div>
+      <img src="ميت.jpg" alt="البحر الميت">
+    </div>
+  `;
+}
+
+
+  // عرض المحتوى
+  document.getElementById('trip-content').innerHTML = content;
+}
+</script>
+<script>
+  document.getElementById("medicalBtn").addEventListener("click", function() {
+    // إخفاء كل الأقسام
+    document.querySelectorAll(".content-section").forEach(el => el.style.display = "none");
+    
+    // عرض القسم العلاجي
+    document.getElementById("medicalContent").style.display = "block";
+  });
+</script>
+
+
+</body>
+</html>
