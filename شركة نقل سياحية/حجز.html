@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>احجز رحلتك</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      width: 100%;
+      height: 700px;
+      background-image: url('بحر.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {height=400px;
+      background-color: #0b1540;
+      border-radius: 20px;
+      width: 1000px;
+      padding: 30px;
+      color: white;
+      position: relative;
+      top: 80px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .location {
+      font-size: 24px;
+      text-align: right;
+      margin-bottom: 5px;
+    }
+
+    .details {
+      font-size: 16px;
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .form {
+      display: flex;
+    
+      margin-bottom: 10px;
+    }
+
+    .form select {
+      width: 350px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      text-align: right;
+    }
+
+    .labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 25px;
+      color: white;
+      padding: 0 2px;
+      margin: 10px;
+    }
+
+    .btn {
+      background-color: #00b88d;
+      color: white;
+      padding: 10px 40px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      float: right;
+    }
+
+    .btn:hover {
+      background-color: #009974;
+    }
+	
+	
+	
+	
+	 .head {
+	 font-size:20px;
+      background-color: #0b1540;
+      border-radius: 10px;
+      width: 200px;
+	  height:30px;
+	  text-align:center;
+      padding: 4px;
+      color: white;
+      position: absolute;
+      top: 10px;
+	  left:50px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+	  border:none;
+    }
+	
+	
+	
+	
+	
+	
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+     
+      <div class="location">البحر الميت</div>
+      <div class="details">سعر الرحلة بالكامل: 200JD</div>
+      <div class="details">وقت الرحلة: 4 ساعات</div>
+
+      <div class="form">
+	          <div class="labels">اليوم</div>
+        <select>
+          <option>الخميس</option>
+          <option>الجمعة</option>
+          <option>السبت</option>
+        </select>
+		  <div class="labels">الوقت</div>
+        <select>
+          <option>8.5 ص</option>
+          <option>10.0 ص</option>
+          <option>12.0 م</option>
+        </select>
+      </div>
+
+    
+
+      <button class="btn" onclick="location.href='حجوزاتي.html'">احجز</button>
+    </div>
+  </div>
+  
+  
+  <button class="head"  onclick="location.href='شركة.html'"><h5>العودة الى الرئيسية</h5></button>
+  
+  
+  
+  
+</body>
+</html>
