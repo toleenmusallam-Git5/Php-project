@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>حجوزاتي</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url('بحر.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+
+    .booking-box {
+      width: 700px;
+      margin: 50px auto;
+      background-color: #ffffffee;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .header {
+      background-color: #1f2350;
+      color: white;
+      padding: 15px;
+      text-align: right;
+      font-size: 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {font-size:24px;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #eee;
+      font-weight: bold;
+    }
+
+    .btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+
+
+    .btn {
+	  width:163;
+      background-color: #2C2F52;
+      color: #ffff;
+    }
+
+    .trip-img {
+      width: 100px;
+      height: auto;
+      border-radius: 5px;
+    }
+	 .head {
+	 font-size:20px;
+      background-color: #0b1540;
+      border-radius: 10px;
+      width: 200px;
+	  height:30px;
+	  text-align:center;
+      padding: 4px;
+      color: white;
+      position: absolute;
+      top: 10px;
+	  left:50px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+	  border:none;
+    }
+	
+	
+  </style>
+</head>
+<body>
+
+  <div class="booking-box">
+    <div class="header">حجوزاتي</div>
+    <table>
+      <tr>
+        <th>نوع الحجز</th>
+        <th>الحجز</th>
+        <th>اليوم</th>
+        <th>الوقت</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>رحلة</td>
+        <td>
+          وادي رم<br>
+          <img src="41.jpg" alt="وادي رم" class="trip-img">
+        </td>
+        <td>الخميس</td>
+        <td>8.5 ص</td>
+        <td>
+          <button class="btn edit-btn" onclick="location.href='حجز.html'">تعديل</button><br><br>
+          <button class="btn cancel-btn" ">إلغاء</button>
+        </td>
+      </tr>
+      <tr>
+        <td>رحلة</td>
+      <td>محمية ضانا
+        <br>
+          <img src="43.jpg" alt="البحر" class="trip-img">
+        </td>
+        <td>الخميس</td>
+        <td>8.5 ص</td>
+        <td>
+          <button class="btn btn" onclick="location.href='حجز.html'">تعديل</button><br><br>
+          <button class="btn btn" ">إلغاء</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+ <button class="head"  onclick="location.href='شركة.html'">العودة الى الرئيسية</button>
+</body>
+</html>
