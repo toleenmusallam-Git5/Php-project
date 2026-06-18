@@ -73,13 +73,16 @@
 
     .section {
       display: none;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 20px auto;
       background: white;
       padding: 20px;
       border-radius: 10px;
       border-top: 2px solid #ccc;
     }
+
+  
+
 
     .section.active {
       display: block;
@@ -97,6 +100,7 @@
   gap: 15px;
 }
 
+
 .top-bar button {
   background: none;
   border: none;
@@ -113,6 +117,12 @@
 .top-bar button:hover {
   color: #FFD700;
 }
+
+
+
+
+
+
 .intro-section {
       text-align: center;
       padding: 20px;
@@ -286,14 +296,15 @@
 }
 
 .bus-icon {
-  width: 100px;
-  margin-bottom: 20px;
+  width: 140px;
+  margin-top: 0px;
+ 
 }
 
 .trip-choice {
-  font-size: 30px;
-  color: #555;
-  margin-bottom: 15px;
+  font-size: 24px;
+  color: #000;
+  margin-top: 0px;
 }
 
 .trip-buttons {
@@ -306,18 +317,20 @@
 
 .trip-buttons button {
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 10px;
+  font-size: 20px;
+  background-color: #CDAC70;
+  color: #000;
+ border:none;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .trip-buttons button:hover,
 .trip-buttons .active {
-  background-color: #388E3C;
+  background-color: #7D5916;
+  color:white;
+   border-color:#7D5916;
 }
 
 .trip-box {
@@ -332,10 +345,13 @@
 
 
 .medical-boxes {
-   display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+    display: flex;
+
+      gap: 40px;
+      max-width: 5000px;
+      margin: auto;
+	  
+	  
 }
 
 .medical-box {
@@ -345,13 +361,14 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       text-align: center;
       padding: 15px;
-  
- 
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
  
 
 }
 
-.medical-box:hover {
+ .medical-box:hover {
   transform: translateY(-5px);
 }
 
@@ -381,11 +398,11 @@
   </style>
 </head>
 <body>
-<div class="top-bar">
-  <button onclick="alert('تسجيل الدخول')">
+<div id="bar" class="top-bar">
+  <button  onclick="location.href='تسجيل الدخول.html'">
     <span>تسجيل الدخول</span> <span>▼</span>
   </button>
-  <button onclick="alert('حجوزاتي')">
+  <button onclick="location.href='حجوزاتي.html'">
     <span>حجوزاتي</span> <span>▼</span>
   </button>
 </div>
@@ -394,7 +411,7 @@
   <h1>استمتع بأفضل الرحلات</h1>
 </div>
   <div class="nav-box">
-    <img src="123.png" alt="شعار الرفاه" class="logo"> 
+    <img id="logo" src="123.png" alt="شعار الرفاه" class="logo" > 
     <div class="navbar">
       <div class="nav-link active" onclick="showSection('home', this)">
         <img src="بيت اصفر.jpg" width="70" alt="بيت" class="icon" data-hover="بيت اصفر.jpg" data-default="4.png">
@@ -424,51 +441,169 @@
   </div>
 
  
-  <div id="trips" class="section">
-   <div class="trips-content">
+  <div id="trips" class="section" style="  background: none;border-radius: none;border-top: none;padding: 40px 20px;text-align: center;">
+  
+  
+  
+  
+  
+   
   <h2 class="trips-title">حافلات مريحة ومميزة أحدث أنواع الخدمات</h2>
   <img src="اسود.png" alt="أيقونة باص" class="bus-icon">
-  <p class="trip-choice">اختر نوع رحلتك</p>
+  <h6 class="trip-choice">اختر نوع رحلتك</h6>
 
   <div class="trip-buttons">
-    <button onclick="showTripContent('religious', this)">دينية</button>
-    <button onclick="showTripContent('historical', this)">أثرية</button>
-    <button onclick="showTripContent('entertainment', this)">ترفيهية</button>
-    <button  id="medicalBtn" class="active" onclick="showTripContent('medical', this)">علاجية</button>
+    <button  id="religiousBtn" onclick="showTripContent('religious', this)">دينية</button>
+    <button  id="historicalBtn" onclick="showTripContent('historical', this)">أثرية</button>
+    <button   id="entertainmentBtn" onclick="showTripContent('entertainment', this)">ترفيهية</button>
+    <button  id="medicalBtn"  onclick="showTripContent('medicalContent', this)">علاجية</button>
   </div>
-
- <div class="content-section" id="medicalContent" style="display: none;">
-  <div class="medical-boxes">
-    <div class="medical-box">
+  
+  
+<!-- علاجية  -->
+ <div class="content-section" id="medicalContent" style="display: none;" >
+  <div class="medical-boxes" >
+  
+    <button class="medical-box" onclick="location.href='حجز.html'">
       <img src="41.jpg" alt="العلاج الطبيعي">
       <h3>وادي رم</h3>
-      <p>يُعد وادي رم ملاذًا مثاليًا لمحبي الطبيعة والمغامرة، بتضاريسه الخلابة وكثبانه الرملية الحمراء التي تأسر الأنظار.
-	مع سحر الصحراء تحت سماء صافية مرصعة بالنجوم</p>
-    </div>
-    <div class="medical-box">
+      <p>الجو الجاف والنقي يساعد مرضى الربو والتحسس.
+
+مناسب للعلاج الطبيعي من خلال الراحة والنوم في بيئة خالية من التلوث.</p>
+    </button>
+	
+   <button class="medical-box" onclick="location.href='حجز.html'">
       <img src="43.jpg" alt="الاستشفاء الصحي">
       <h3>محمية ضانا</h3>
-      <p>اكتشف أقدم وأكبر محمية طبيعية في الأردن، حيث يلتقي الجمال البيئي بالتنوع الحيوي الفريد.</p>
-    </div>
-  </div>
-  <div class="medical-box">
+      <p>هواء نقي وطبيعة خلابة، مناسب للاسترخاء والتعافي النفسي.
+تحتوي على أنواع نادرة من النباتات الطبية.</p>
+   </button>
+ <button class="medical-box" onclick="location.href='حجز.html'">
     <img src="45.jpg" alt="العلاج الطبيعي">
     <h3>البحر الميت</h3>
-    <p>يُعد البحر الميت وجهة علاجية وسياحية فريدة، يتميز بتركيبة غنية بالأمل
-	اح والمعادن، وطين مفيد للبشرة والمفاصل، مع هواء نقي وأعلى نسبة أوكسجين تساعد على الاسترخاء في أخفض نقطة على سطح الأرض.</p>
-  </div>
-  <div class="medical-box">
+    <p>شهر موقع طبيعي علاجي في الأردن والعالم.
+
+غني بالأملاح والمعادن.
+
+الطين الموجود فيه يُستخدم لعلاج الأمراض الجلدية والمفاصل.
+
+مستوى الأوكسجين أعلى من أي منطقة أخرى، مما يساعد في الاسترخاء.</p>
+  </button>
+  
+  
+   <button class="medical-box" onclick="location.href='حجز.html'">
     <img src="43.jpg" alt="الاستشفاء الصحي">
     <h3>محمية ضانا</h3>
     <p>هواء نقي وطبيعة خلابة، مناسب للاسترخاء والتعافي النفسي.
     تحتوي على أنواع نادرة من النباتات الطبية.</p>
-  </div>
+  </button>
 </div>
 </div>
 
-</div>
 
+<!-- ترفيهية -->
+
+ <div class="content-section" id="entertainment" style="display: none;">
+  <div class="medical-boxes" >
+  
+    <button class="medical-box"   style="position:absolute; right:550px;   onclick="location.href='حجز.html'">
+       <img src="عقبة.jpg" alt="العقبة">
+            <h3>العقبة</h3>
+            <p>تجربة ممتعة للغوص، السباحة، والرياضات البحرية، مع مناظر طبيعية خلابة وأسواق مميزة للتسوق.</p>
+    </button>
+	
+   <button class="medical-box"  style="position:absolute; right:250px;  onclick="location.href='حجز.html'">
+      <img src="بوليفارد.jpg" alt="العبدلي">
+            <h3>منتجع العبدلي</h3>
+            <p>منتجع ترفيهي متكامل يضم ملاعب مائية، مسابح، وأنشطة عائلية، مثالي لقضاء يوم ممتع بعيدًا عن المدينة.</p>
+
+    </button>
+ 
+  <button class="medical-box"     style="position:absolute; right:850px; onclick="location.href='حجز.html'">
+     <img src="156.jpg" alt="عجلون">
+            <h3>عجلون - غابات برقش</h3>
+            <p>مكان مميز للمشي والتخييم والأنشطة العائلية وسط الأشجار والمناظر الخضراء الخلابة.</p>
+  </button>
+  
+</div>
+  
   </div>
+  
+<!-- أثرية -->
+  
+   <div class="content-section" id="historical" style="display: none;">
+  <div class="medical-boxes" >
+  
+   <button class="medical-box"  style="position:absolute; right:250px;  onclick="location.href='حجز.html'">
+      <img src="بتراء.jpg" alt="البتراء">
+            <h3>البتراء</h3>
+            <p>مدينة الأنباط الوردية المنحوتة في الصخر، أحد عجائب الدنيا السبع. تجربة أثرية غنية بالتاريخ والثقافة.</p>
+    </button>
+	
+   <button class="medical-box"  style="position:absolute; right:550px;  onclick="location.href='حجز.html'">
+      <img src="جرش.jpg" alt="جرش">
+            <h3>جرش</h3>
+            <p>من أكبر المدن الرومانية القديمة، تتميز بالمدرجات والأعمدة والمعابد الرومانية المحفوظة جيدًا.</p>
+  
+
+    </button>
+ 
+  <button class="medical-box"     style="position:absolute; right:850px; onclick="location.href='حجز.html'">
+     <img src="ام قيس.png" alt="أم قيس">
+            <h3>أم قيس</h3>
+            <p>مدينة أثرية تطل على بحيرة طبريا، غنية بالآثار اليونانية والرومانية والمناظر الطبيعية.</p>
+ </button>
+</div>
+  
+  </div>
+<!-- دينية -->
+  
+    <div class="content-section" id="religious" style="display: none;">
+  <div class="medical-boxes" >
+  
+ <button class="medical-box"  style="position:absolute; right:250px;  onclick="location.href='حجز.html'">
+      <img src="ضريح.jpg" alt="ضريح ابو عبيدة">
+            <h3>ضريح أبي عبيدة بن الجراح
+</h3>
+            <p>
+			
+			
+	تشهد على ذلك البلاطة الرخامية الأثرية	مقام وضريح الصَّحابي أبي عبيدة عامر بن الجرَّاح مسجد حديث كان قد بُني مكان قُبّة كان قد بناها الظاهر بيبرس
+			
+			</p>
+    </button>
+	
+   <button class="medical-box"  style="position:absolute; right:550px;  onclick="location.href='حجز.html'">
+      <img src="ض.jpg" alt="مقام">
+            <h3>ضريح جعفر بن ابي طالب</h3>
+            <p>عبارة عن مسجد كبير بُني حديثًا، وفي داخله (خارج مكان الصلاة) ضريح يُنسب للصَّحابي جعفر بن أبي طالب القائد الثّاني في معركة مؤتة.</p>
+  
+
+    </button>
+ 
+  <button class="medical-box"     style="position:absolute; right:850px; onclick="location.href='حجز.html'">
+     <img src="الرقيم.jpg" alt="الرقيم">
+            <h3>أصحاب الكهف</h3>
+            <p>الكهف الذي رقد فيه الفتية المؤمنون الفارون بدينهم من الملك المضطهد دقيانوسبالنظر إلى الدلائل التاريخية والأثرية واستنادا إلى ما ذكر في القرآ</p>
+ </button>
+</div>
+  
+  </div>
+  
+  
+ 
+  
+ </div> 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <div id="hotels" class="section">
     <p>هنا معلومات عن الفنادق.</p>
   </div>
@@ -476,71 +611,21 @@
     <p>هنا باقات الرحلات والفنادق معًا.</p>
   </div>
   </div>
-  <script>
-    const links = document.querySelectorAll('.nav-link');
-
-    links.forEach(link => {
-      const img = link.querySelector('img');
-      const def = img.dataset.default;
-      const hover = img.dataset.hover;
-
-      // hover
-      link.addEventListener('mouseenter', () => {
-        img.src = hover;
-      });
-
-      // leave
-      link.addEventListener('mouseleave', () => {
-        if (!link.classList.contains('active')) {
-          img.src = def;
-        }
-      });
-    });
-
-  function showSection(id, element) {
-  // عرض القسم المطلوب
-  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-
-  // تفعيل الرابط وإرجاع كل الأيقونات للوضع الافتراضي
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.classList.remove('active');
-    const img = link.querySelector('img');
-    img.src = img.dataset.default; // ترجع للصورة السوداء
-  });
-
-  // اضف active للرابط المضغوط وغيّر صورته إلى اللون الأصفر
-  element.classList.add('active');
-  const activeImg = element.querySelector('img');
-  activeImg.src = activeImg.dataset.hover;
-
-  // تغيير الخلفية والنص حسب القسم
-  const heroImage = document.querySelector('.hero-image');
-  const heroText = document.getElementById('heroText');
-
-  if (id === 'trips') {
-    heroImage.style.backgroundImage = "url('ررحلة.png')";
-    heroText.style.display = 'block';
-  } else {
-    heroImage.style.backgroundImage = "url('resize.jpg')";
-    heroText.style.display = 'none';
-  }
-}
-
-
-  </script>
+  
+ 
+ 
 
 <div id="home" class="section active">
 
  <div class="intro-section">
-    <p>
-      في شركة الرفاه للنقل، نوفّر لك تجربة نقل سياحي متكاملة داخل أجمل وجهات الأردن، تجمع بين الراحة، الأمان، والاحترافية.
-سواء كنت ترغب في استكشاف المدن التاريخية مثل البترا وجرش، أو الاستمتاع بجمال الطبيعة في وادي رم والبحر الميت، أو الانغماس في ثقافات المناطق المحلية،
-نحن هنا لنكون رفيقك الموثوق في كل رحلة، ونضمن لك تجربة سفر مميزة لا تُنسى.
+    <h4>
+      في شركة الرفاه للنقل نقدم أفضل خدمات النقل السياحي التي تجمع بين الراحة والأمان والتميّز.
+      سواء كنت تخطط لاكتشاف المدن التاريخية، أو الاستمتاع بجمال الطبيعة، أو الانغماس في ثقافات جديدة،
+      فنحن هنا لنكون شريكك الأمثل في رحلتك.
       <br>
       تضمن لك مركباتنا الحديثة وفريقنا المدرب، رحلة مريحة وممتعة. ونقدم لك تجربة سفر استثنائية
       تجعل كل لحظة من رحلتك ذكرى لا تُنسى. استكشف وجهات رائعة معنا، واستمتع بأعلى مستويات الراحة والرفاهية.
-    </p>
+    </h4>
     <img id="slider-image" src="صورة11.jpg" alt="صورة" style="width: 900px;">
   </div>
 
@@ -624,7 +709,7 @@
 
 </div>
 <script>
-  const images = ["صورة11.jpg", "صورة12.jpg", "صورة13.jpg"]; 
+  const images = ["صورة11.jpg", "صورة9.jpg", "صورة13.jpg"]; 
   let index = 0;
   const sliderImage = document.getElementById("slider-image");
 
@@ -641,41 +726,9 @@ function showTripContent(type, button) {
   // فعل الزر الحالي
   button.classList.add('active');
 
-  // حدد المحتوى المناسب
-  let content = '';
-  if (type === 'religious') {
-    content = `<h3>الرحلات الدينية</h3><p>زيارات إلى المواقع المقدسة بكل راحة وأمان مع مرشدين مختصين.</p>`;
-  } else if (type === 'historical') {
-    content = `<h3>الرحلات الأثرية</h3><p>استكشاف مواقع تاريخية قديمة مثل البتراء والمدرج الروماني.</p>`;
-  } else if (type === 'entertainment') {
-    content = `<h3>الرحلات الترفيهية</h3><p>نزهات إلى أماكن مليئة بالمرح مثل المنتزهات والحدائق والمتاحف.</p>`;
- } else if (type === 'medical') {
-  content = `
-    <h3>الرحلات العلاجية</h3>
-    <div class="popular-item">
-      <div class="popular-text">
-        <h4>حمامات ماعين</h4>
-        <p>ينابيع مياه معدنية ساخنة تساعد على الاسترخاء وتجديد النشاط.</p>
-      </div>
-      <img src="ماعين.jpg" alt="حمامات ماعين">
-    </div>
-
-    <div class="popular-item">
-      <div class="popular-text">
-        <h4>البحر الميت</h4>
-        <p>أدنى نقطة على سطح الأرض، معروف بفوائده العلاجية للبشرة والمفاصل.</p>
-      </div>
-      <img src="ميت.jpg" alt="البحر الميت">
-    </div>
-  `;
+ 
 }
 
-
-  // عرض المحتوى
-  document.getElementById('trip-content').innerHTML = content;
-}
-</script>
-<script>
   document.getElementById("medicalBtn").addEventListener("click", function() {
     // إخفاء كل الأقسام
     document.querySelectorAll(".content-section").forEach(el => el.style.display = "none");
@@ -683,8 +736,100 @@ function showTripContent(type, button) {
     // عرض القسم العلاجي
     document.getElementById("medicalContent").style.display = "block";
   });
+  
+  document.getElementById("religiousBtn").addEventListener("click", function() {
+    // إخفاء كل الأقسام
+    document.querySelectorAll(".content-section").forEach(el => el.style.display = "none");
+    //عرض القسم الديني
+    document.getElementById("religious").style.display = "block";
+  });
+  
+  
+   document.getElementById("religiousBtn").addEventListener("click", function() {
+    // إخفاء كل الأقسام
+    document.querySelectorAll(".content-section").forEach(el => el.style.display = "none");
+    //عرض القسم الديني
+    document.getElementById("religious").style.display = "block";
+  });
+  
+  
+   document.getElementById("historicalBtn").addEventListener("click", function() {
+    // إخفاء كل الأقسام
+    document.querySelectorAll(".content-section").forEach(el => el.style.display = "none");
+    //عرض القسم الديني
+    document.getElementById("historical").style.display = "block";
+  });
+  
+   document.getElementById("entertainmentBtn").addEventListener("click", function() {
+    // إخفاء كل الأقسام
+    document.querySelectorAll(".content-section").forEach(el => el.style.display = "none");
+    //عرض القسم الديني
+    document.getElementById("entertainment").style.display = "block";
+  });
+  
+  
+  
 </script>
+ <script>
+    const links = document.querySelectorAll('.nav-link');
 
+    links.forEach(link => {
+      const img = link.querySelector('img');
+      const def = img.dataset.default;
+      const hover = img.dataset.hover;
+
+      // hover
+      link.addEventListener('mouseenter', () => {
+        img.src = hover;
+      });
+
+      // leave
+      link.addEventListener('mouseleave', () => {
+        if (!link.classList.contains('active')) {
+          img.src = def;
+        }
+      });
+    });
+
+  function showSection(id, element) {
+  // عرض القسم المطلوب
+  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+
+  // تفعيل الرابط وإرجاع كل الأيقونات للوضع الافتراضي
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+    const img = link.querySelector('img');
+    img.src = img.dataset.default; // ترجع للصورة السوداء
+  });
+
+  // اضف active للرابط المضغوط وغيّر صورته إلى اللون الأصفر
+  element.classList.add('active');
+  const activeImg = element.querySelector('img');
+  activeImg.src = activeImg.dataset.hover;
+
+  // تغيير الخلفية والنص حسب القسم
+  const heroImage = document.querySelector('.hero-image');
+  const heroText = document.getElementById('heroText');
+  
+  if (id === 'trips') {
+    heroImage.style.backgroundImage = "url('ررحلة.png')";
+    heroText.style.display = 'block'; 
+	 
+
+  } else {
+    heroImage.style.backgroundImage = "url('resize.jpg')";
+    heroText.style.display = 'none';
+	
+  }
+  
+ 
+  
+  
+}
+
+
+  </script>
 
 </body>
 </html>
